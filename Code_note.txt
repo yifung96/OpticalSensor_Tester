@@ -1,0 +1,41 @@
+Main Program (Run_GUi.py)
+
+1. Set calibrated position/Set Servo[2] initial angle for height
+
+a. Manually Setup (Run_wtGUi.py)
+	-reset() -> reset robotic arm to 90d for Servo[0] and [1]
+	-swift.set_servo_angle(servo_id=2,angle=A,speed=10000)
+		-Lower the height by increase angle A
+	-At this position, the radius is 220 units - line 772
+
+b. In class functions(): - line768
+	-Set the initial angle 'ang' - line 770
+	-Constant is fixed at 0.8 - line 769
+
+c. In class Calibration(): - line 226
+	-Set the initial angle 'ang' - line 227
+	-Constant is fixed at 0.8 - line 228
+
+*Note*: Constant refer to the ratio of unit (coordinate) to mm
+
+2. Comment out swift when rerun the program(deactivate)
+	-# (comment out) line 26
+	-The rerun exclude conditions below:
+		a. Restart robot (using power button)
+		b. Restart IPython console
+		c. Restart Spyder software
+
+3. Change Sweep Height Range
+a. class Sweep_Height:
+	-Change the range value sh at line 438
+	-Initial range: 2<= sh <=4 
+
+4. Accuracy for Z step -> Refer to documentation page 15
+
+5. Directory address setting:
+a. Database: line 58
+b. Result_data (data storage): line 401, 403
+
+5. Adjust the amount of swing (left-right movement)
+-Change 'loop' value, line 858
+	
